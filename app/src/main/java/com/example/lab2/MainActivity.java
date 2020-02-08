@@ -2,6 +2,7 @@ package com.example.lab2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("dbg",txtInput.getText().toString());
 
-        Toast.makeText(this,txtInput.getText().toString(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,txtInput.getText().toString(), Toast.LENGTH_LONG).show();
+        Intent main2Intent = new Intent(getApplicationContext(), Main2Activity.class);
+        main2Intent.putExtra("output", txtInput.getText().toString());
+        startActivity(main2Intent);
     }
 }
